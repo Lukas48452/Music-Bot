@@ -1,4 +1,4 @@
-FROM node:22.14.0-slim AS node_build
+FROM node:22.22.3-slim AS node_build
 
 WORKDIR /tmp
 
@@ -10,7 +10,7 @@ RUN npm ci && \
 
 ############################################################
 
-FROM node:22.14.0-slim
+FROM node:22.22.3-slim
 
 WORKDIR /bot
 
