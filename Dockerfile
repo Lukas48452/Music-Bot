@@ -5,6 +5,7 @@ WORKDIR /tmp
 COPY . .
 
 RUN npm ci && \
+    cd dashboard && npm ci && cd .. && \
     npm run build
 
 
