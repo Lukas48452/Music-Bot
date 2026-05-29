@@ -6,7 +6,11 @@
     "type": "module",
     "scripts": {
         "start": "npm run build && node ./dist/src/index.js",
-        "build": "tsc",
+        "start:server": "npm run build:server && node ./dist/src/index.js",
+        "build": "npm run build:dashboard && npm run build:server",
+        "build:server": "tsc",
+        "build:dashboard": "cd dashboard && npm run generate",
+        "install:dashboard": "cd dashboard && npm install",
         "dev": "tsc --noEmit --incremental false && tsx ./src/index.ts",
         "lint": "eslint . --color"
     },
@@ -24,10 +28,10 @@
         "brace-expansion": "^5.0.6",
         "qs": "^6.15.2",
         "ws": "^8.21.0"
-  },
+    },
     "dependencies": {
+        "bcryptjs": "^3.0.3",
         "better-sqlite3": "^12.10.0",
-        "body-parser": "^2.2.2",
         "cookie": "^1.1.1",
         "discord.js": "~14.26.4",
         "dotenv": "^17.4.2",
@@ -35,7 +39,8 @@
         "i18next": "^26.2.0",
         "i18next-fs-backend": "^2.6.6",
         "lavashark": "^2.3.2",
-        "undici": "^8.3.0"
+        "undici": "^8.3.0",
+        "zod": "^4.4.3"
     },
     "devDependencies": {
         "@eslint/js": "^10.0.1",
