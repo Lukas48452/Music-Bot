@@ -9,3 +9,5 @@ server/plugins/
 server/*.jar
 
 .DS_Store
+
+*.db
