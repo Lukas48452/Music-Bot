@@ -23,7 +23,6 @@ RUN apt update -y && \
 COPY --from=node_build /tmp/dist /bot
 COPY --from=node_build /tmp/node_modules /bot/node_modules
 COPY --from=node_build /tmp/server /bot/server
-COPY --from=node_build /tmp/views /bot/views
 COPY --from=node_build /tmp/dashboard/.output/public /bot/dashboard/.output/public
 
 COPY --from=node_build /tmp/package*.json /bot
